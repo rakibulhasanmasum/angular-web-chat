@@ -5,7 +5,7 @@
   "projects": {
     "angular6-web-chat": {
       "projectType": "application",
-      "schematics": {},
+     "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -97,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
