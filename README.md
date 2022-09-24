@@ -14,6 +14,8 @@
   # to run any commands on the docker container, on another terminal run
   docker exec -it angular6-web-chat_web_1 /bin/sh
   # docker exec -it angular6-web-chat_web_1 cmd.exe # for windows
+  
+  # ng can be found at `node_modules/.bin/ng`
 ```
 ## Without docker
 
