@@ -1,27 +1,17 @@
-# Angular6WebChat
+# Before you begin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+1. I assume you have docker & docker-compose installed on your pc.
 
-## Development server
+2. Please notice on the scripts under package.json we declared "docker" which will be executed in `npm run docker` command. I have added --host to be 0.0.0.0 to allow my docker container to expose the port to localhost of my host computer. Meanwhile --poll=2000 will allow to recompile the project in every changes we save.
+ 
+3. To run the project 
+```bash
+  # on the terminal run
+  docker-compose build
+  docker-compose up
+  
+  # to run any commands on the docker container, on another terminal run
+  docker exec -it angular6-web-chat_web_1 /bin/sh
+  # docker exec -it angular6-web-chat_web_1 cmd.exe # for windows
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
