@@ -1,0 +1,39 @@
+#chat {
+    position: sticky;
+    border-radius: 50%;
+    top: 90%;
+    left: 95%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}
+.chat__icon {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color:#1362b3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.chat__box {
+    position: sticky;
+    top: 15.5%;
+    left: 77.5%;
+    width: 400px;
+    height: 700px;
+    border-radius: 20px;
+    background-color: #1362b3;
+    overflow: hidden;
+}
+.chat__box--header {
+    background-color: white;
+    height: 12%;
+}
+.chat__box--body {
+    height: 73%;
+}
+.chat__box--footer {
+    background-color: white;
+    height: 15%;
+}
