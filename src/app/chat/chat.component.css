@@ -2,10 +2,11 @@
     position: sticky;
     border-radius: 50%;
     top: 90%;
-    left: 95%;
+    left: 90%;
     width: 60px;
     height: 60px;
     overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
 }
 .chat__icon {
     cursor: pointer;
@@ -18,17 +19,51 @@
 }
 .chat__box {
     position: sticky;
-    top: 15.5%;
-    left: 77.5%;
-    width: 400px;
-    height: 700px;
+    top: 9.5%;
+    left: 45.5%;
+    width: 380px;
+    height: 550px;
+    /* width: 400px;
+    height: 700px; */
     border-radius: 20px;
-    background-color: #1362b3;
+    background-color: #ebedef;
     overflow: hidden;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }
 .chat__box--header {
     background-color: white;
     height: 12%;
+    display: flex;
+    align-items: center;
+    /* gap: 20px; */
+    justify-content: space-between;
+}
+.buttons {
+    padding-right: 10px;
+    display: flex;
+    gap: 8px;
+    /* padding: 10px; */
+    /* background-color: #1362b3; */
+}
+.buttons > div {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #ebedef;
+    color: #444;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+
+}
+.receiver-name {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    color: #444;
 }
 .chat__box--body {
     height: 73%;
@@ -36,4 +71,56 @@
 .chat__box--footer {
     background-color: white;
     height: 15%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    /* padding: 20px;
+    padding-left: 5px; */
+}
+#message {
+    padding: 5px 12px;
+    /* border: none; */
+    width: 280px;
+    height: 40px;
+    outline: none;
+    resize: none;
+    border-radius: 20px;
+    font-size: large;
+    /* border: 2px solid #1362b3; */
+    background-color: #ebedef;
+    border: none;
+    color: #444;
+    /* resize: none;
+    white-space: nowrap;
+    overflow-x: scroll; */
+}
+/* #message::-webkit-scrollbar {
+    display: none;
+} */
+.attachment {
+    background-color: #e7e7e7;
+    /* padding: 9px; */
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+.send-button{
+    /* padding: 10px;
+    border: .5px solid #333;
+    border-radius: 20px; */
+    /* background-color: #444; */
+    /* color: #fff; */
+    width: 40px;
+    height: 40px;
+    background-color:#ebedef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
