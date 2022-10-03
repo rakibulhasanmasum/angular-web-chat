@@ -2,7 +2,7 @@
     position: sticky;
     border-radius: 50%;
     top: 90%;
-    left: 90%;
+    left: 91.5%;
     width: 60px;
     height: 60px;
     overflow: hidden;
@@ -19,8 +19,8 @@
 }
 .chat__box {
     position: sticky;
-    top: 9.5%;
-    left: 45.5%;
+    top: 18.5%;
+    left: 69.5%;
     width: 380px;
     height: 550px;
     /* width: 400px;
