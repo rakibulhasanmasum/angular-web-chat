@@ -8,6 +8,7 @@ import { P2pComponent } from './chat/p2p/p2p.component';
 import { environment } from '../environments/environment';
 // import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,8 @@ import { AngularFireModule } from '@angular/fire/compat'
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase)

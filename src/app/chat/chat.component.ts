@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-chat',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-
-  constructor() { }
+  message: FormControl = new FormControl('');
+  msg: string = "";
+  finalMessage: string = "";
+  constructor() {
+    this.message.valueChanges.subscribe(obserber => {
+      this.msg = obserber;
+    })
+  }
 
   ngOnInit(): void {
   }
 
+  sendMessage(event: any) {
+    this.finalMessage = this.msg;
+    this.message.reset();
+  }
 }
