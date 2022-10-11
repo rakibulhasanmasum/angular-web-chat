@@ -19,7 +19,8 @@
 }
 .chat__box {
     position: sticky;
-    top: 18.5%;
+    top: 9.5%;
+    /* top: 10vh; */
     left: 69.5%;
     width: 380px;
     height: 550px;

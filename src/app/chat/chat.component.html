@@ -1,3 +1,6 @@
+<ul>
+    <li *ngFor="let message of allMessage | async">{{message.receiverName}}{{message.msg}}{{message.seenStatus}}</li>
+</ul>
 <div id="chat">
     <div class="chat__icon">
         <svg width="36" height="36" viewBox="0 0 36 36">
