@@ -22,18 +22,21 @@ export class ChatComponent implements OnInit {
   finalMessage: string = "";
   userName: string = "pet shop bd";
   allMessage: any;
+  p2pChat: boolean;
+  receiverName: string;
   // public readonly messages$: Observable<Message[]>
 
   constructor(private readonly afs: AngularFirestore) {
+    this.p2pChat = false;
+    this.receiverName = "";
     this.allMessage = afs
     // .doc('/chat/dt-guest/history/merchant')
     // .collection('/chat/dt-guest/history', ref => ref.where(afs, '==', this.userName))
-    .collection(`/chat/dt-guest/history/merchant/pet shop bd`, ref => ref.orderBy('datetime'))
+    .collection(`/chat/dt-guest/history/merchant/pet shop bd`, ref => ref.orderBy('datetime', 'desc'))
     .snapshotChanges()
     .pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as History;
-        console.log(data.receiverName, ' is printed')
         return { ...data };
       }))
     )
@@ -49,5 +52,14 @@ export class ChatComponent implements OnInit {
   sendMessage(event: any) {
     this.finalMessage = this.msg;
     this.message.reset();
+  }
+
+  p2p(event: History): void {
+    this.p2pChat = true;
+    this.receiverName = event.receiverName;
+  }
+
+  p2pReset() {
+    this.p2pChat = false;
   }
 }

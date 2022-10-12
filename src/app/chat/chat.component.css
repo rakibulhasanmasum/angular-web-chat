@@ -69,6 +69,8 @@
 }
 .chat__box--body {
     height: 73%;
+
+    overflow-y: scroll;
 }
 .chat__box--footer {
     background-color: white;
@@ -127,4 +129,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+}
+.back-button {
+    margin: 0 7px;
+    cursor: pointer;
 }
