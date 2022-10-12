@@ -38,7 +38,7 @@ export class P2pComponent implements OnInit {
 
   ngOnChanges(changes: any) {
     console.log(" OH CHANGED! ", changes.message)
-    if (changes.message) {
+    if (changes.message && changes.message.previousValue !== undefined) {
       this.storeMessage(changes.message.currentValue);
     }
   }
