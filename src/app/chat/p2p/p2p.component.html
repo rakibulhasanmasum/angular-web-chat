@@ -1,7 +1,13 @@
 <ul #scrollMe class="p2p-messages">
     <li *ngFor="let message of messages$ | async">
+        <!-- {{message | json}} -->
+        <div class="date" *ngIf="message.newDate">
+            {{newDate(message.date)}} 
+        </div>
         <div class="p2p-message" [ngClass]="message.id == receiverName ? 'receiver': 'sender'" >
-            <span class="p2p-message__text"><span class="date-time">{{message.date | datetime2Date | date: 'shortTime'}}</span>{{message.message}}</span>
+            <span class="p2p-message__text">
+                <span class="date-time">{{message.date | datetime2Date | date: 'shortTime'}}</span>{{message.message}}
+            </span>
         </div>
     </li>
 </ul>

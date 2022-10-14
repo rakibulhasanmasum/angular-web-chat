@@ -38,13 +38,26 @@
     padding: 10px;
     max-width: 95%;
     min-width: 25%;
-    display: inline-block;
+    display: block;
     padding-bottom: 10px;
 }
 .date-time {
     position: absolute;
 
     font-size: .6rem;
-    bottom: 0;
+    bottom: 1px;
     right: 11px;
+}
+.date {
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 80px;
+    text-align: center;
+    margin: 0 auto;
+
+    padding: 5px 10px;
+    border-radius: 20px;
+    /* margin: 5px; */
+    margin-bottom: 5px;
+    margin-top: 5px;
+    
 }

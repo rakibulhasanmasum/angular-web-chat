@@ -2,8 +2,10 @@ import { Component, Input, OnInit, SimpleChange, AfterViewChecked, ElementRef, V
 // import { Firestore, doc, docData, collection, getDocs, onSnapshot, query, orderBy, collectionData } from '@angular/fire/firestore';
 import { map, merge, Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { Datetime2DatePipe } from '../../datetime2-date.pipe';
+import { DatePipe } from '@angular/common'
 
-interface Message { id: string; message: string; date: Date; profile: string; type: string; url: string; }
+interface Message { id: string; message: string; date: Date; profile: string; type: string; url: string; newDate: boolean; }
 interface History {
   receiverName: string,
   senderName: string,
@@ -26,12 +28,24 @@ export class P2pComponent implements OnInit, AfterViewChecked {
   public messages$: Observable<Message[]>;
   public messagesCollection$: AngularFirestoreCollection<Message>;
   public historyCollection$: AngularFirestoreCollection<History>;
+  private dateArrived: Map<String, Boolean>;
+  public isNewDate: boolean;
+  public date: String = "";
 
   constructor(private readonly afs: AngularFirestore) {
+    this.dateArrived = new Map();
+    this.isNewDate = true;
     this.messagesCollection$ = afs.collection<Message>('/chat/dt-guest/room/p2p/pet shop bd-pet-1123', ref => ref.orderBy('date', 'asc'));
     this.messages$ = this.messagesCollection$.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Message;
+        const date: any = this.newDate(data.date);
+        if (!this.dateArrived.get(date)) {
+          this.dateArrived.set(date, true);
+        } else {
+          this.isNewDate = false;
+        }
+        data.newDate = this.isNewDate;
         return { ...data };
       }))
     );
@@ -45,11 +59,20 @@ export class P2pComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit(): void {
+    this.dateArrived = new Map();
     this.messagesCollection$ = this.afs.collection<Message>(`/chat/dt-guest/room/p2p/pet shop bd-${this.receiverName}`, ref => ref.orderBy('date', 'asc'));
     this.messages$ = this.messagesCollection$.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         this.updateSeenStatus();
         const data = a.payload.doc.data() as Message;
+        const date: any = this.newDate(data.date);
+        if (!this.dateArrived.get(date)) {
+          this.isNewDate = true;
+          this.dateArrived.set(date, true);
+        } else {
+          this.isNewDate = false;
+        }
+        data.newDate = this.isNewDate;
         return { ...data };
       }))
     );
@@ -83,5 +106,11 @@ export class P2pComponent implements OnInit, AfterViewChecked {
       } catch(err) {
         console.log(err)
       }                 
+  }
+
+  newDate(date: any) {
+    date = new Datetime2DatePipe().transform(date);
+    date = new DatePipe('en-En').transform(date, 'shortDate')
+    return date;
   }
 }
