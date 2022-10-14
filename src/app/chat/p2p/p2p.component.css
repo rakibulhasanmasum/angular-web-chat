@@ -32,7 +32,8 @@
 .p2p-message__text {
     position: relative;
 
-    background-color: #E4E6EB;
+    /* background-color: #E4E6EB; */
+    background-color: rgba(0, 0, 0, 0.05);
     border-radius: 25px;
     padding: 10px;
     max-width: 95%;
