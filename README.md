@@ -25,9 +25,9 @@
 ```
 
 # Screenshots
-<img src="https://github.com/rakibulhasanmasum/web-chat/blob/master/screenshots/1.png" alt="screenshot" style="max-width: 100%; height: 600px;">
-<img src="https://github.com/rakibulhasanmasum/web-chat/blob/master/screenshots/2.png" alt="screenshot" style="max-width: 100%; height: 600px;">
-<img src="https://github.com/rakibulhasanmasum/web-chat/blob/master/screenshots/3.png" alt="screenshot" style="max-width: 100%; height: 600px;">
+<img src="https://github.com/rakibulhasanmasum/angular6-web-chat/blob/master/screenshots/1.png" alt="screenshot" style="max-width: 100%; height: 600px;">
+<img src="https://github.com/rakibulhasanmasum/angular6-web-chat/blob/master/screenshots/2.png" alt="screenshot" style="max-width: 100%; height: 600px;">
+<img src="https://github.com/rakibulhasanmasum/angular6-web-chat/blob/master/screenshots/3.png" alt="screenshot" style="max-width: 100%; height: 600px;">
 
 # angular.json [modifications]
 ```js
