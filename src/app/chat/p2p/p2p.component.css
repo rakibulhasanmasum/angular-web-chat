@@ -23,7 +23,7 @@
 .sender {
     justify-content: flex-end;
     margin-left: 13%;
-    text-align: end;
+    text-align: start;
 }
 .receiver {
     justify-content: flex-start;
@@ -36,9 +36,9 @@
     border-radius: 25px;
     padding: 10px;
     max-width: 95%;
-    min-width: 35%;
+    min-width: 25%;
     display: inline-block;
-    padding-right: 50px;
+    padding-bottom: 10px;
 }
 .date-time {
     position: absolute;
