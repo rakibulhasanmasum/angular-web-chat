@@ -24,6 +24,7 @@ export class ChatComponent implements OnInit {
   allMessage: any;
   p2pChat: boolean;
   receiverName: string;
+  isChatBoxMinimized: boolean = true;
   // public readonly messages$: Observable<Message[]>
 
   constructor(private readonly afs: AngularFirestore) {
@@ -61,5 +62,13 @@ export class ChatComponent implements OnInit {
 
   p2pReset() {
     this.p2pChat = false;
+  }
+
+  minimizeChatBox() {
+    this.isChatBoxMinimized = true;
+  }
+
+  maximizeChatBox() {
+    this.isChatBoxMinimized = false;
   }
 }

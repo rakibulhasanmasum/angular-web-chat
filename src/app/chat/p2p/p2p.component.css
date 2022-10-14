@@ -1,0 +1,49 @@
+.p2p-message {
+    display: flex;
+    align-items: center;
+    /* height: 2rem; */
+    margin: 0px 5px;
+    overflow: hidden;
+}
+/* .p2p-message span {
+    background-color: #E4E6EB;
+    border-radius: 25px;
+    padding: 10px;
+    max-width: 95%;
+    min-width: 35%;
+    display: inline-block;
+} */
+.p2p-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    margin-top: 10px;
+}
+.sender {
+    justify-content: flex-end;
+    margin-left: 13%;
+    text-align: end;
+}
+.receiver {
+    justify-content: flex-start;
+    margin-left: 2%;
+}
+.p2p-message__text {
+    position: relative;
+
+    background-color: #E4E6EB;
+    border-radius: 25px;
+    padding: 10px;
+    max-width: 95%;
+    min-width: 35%;
+    display: inline-block;
+    padding-right: 50px;
+}
+.date-time {
+    position: absolute;
+
+    font-size: .6rem;
+    bottom: 0;
+    right: 11px;
+}
