@@ -101,8 +101,8 @@ export class P2pComponent implements OnInit, AfterViewChecked {
         console.log("scrolled");
         
           let el: any = this.myScrollContainer.nativeElement;
-          if (el.parentNode && el.parentNode.parentNode && el.parentNode.parentNode)
-            el.parentNode.parentNode.parentNode.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+          if (el.parentNode && el.parentNode.parentNode )
+            el.parentNode.parentNode.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
       } catch(err) {
         console.log(err)
       }                 
